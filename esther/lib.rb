@@ -22,6 +22,11 @@ module Lib
     to_text(bytes).chars.grep(/[ A-Za-z]/).length
   end
 
+  def hamming_distance(hex_stringA, hex_stringB)
+    # the number of position at which the bits are different
+    (hex_stringA.to_i(16) ^ hex_stringB.to_i(16)).to_s(2).count('1')
+  end
+
   def decrypt_xor(bytes)
     # There 256 ascii characters (bytes), XOR every possible ascii character representation
     # with each character in the converted bytes array values of the encrypted message (provided hex)
