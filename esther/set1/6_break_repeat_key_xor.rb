@@ -59,6 +59,11 @@ class TestBreakRepeatKeyXor < Test::Unit::TestCase
 
     expected_key_output = 'Terminator X: Bring the noise'
 
+    # Use repeating key xor and the key to decrypt to test that this works
+
+    decryted_hex = Lib.repeating_key_xor(Base64.decode64(File.read(file)), expected_key_output)
+    puts Lib.hex_to_bin(decryted_hex)
+
     assert_equal(37, hamming_distance)
     assert_equal(29, guessed_keysize)
     assert_equal(expected_key_output, break_repeat_key_xor(file, keysize_range))

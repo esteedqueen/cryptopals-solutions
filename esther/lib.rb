@@ -46,4 +46,16 @@ module Lib
 
     return decrypted_collection
   end
+
+  def repeating_key_xor(text, key)
+    # convert to ascii bytes representation
+    input_bytes = text.bytes
+    key_bytes = key.bytes
+
+    # Iterate through each input while repeating the key using .cycle enumerator
+    key_cycle = key_bytes.cycle(input_bytes.each_slice(key_bytes.length).to_a.length)
+    encrypted_bytes = input_bytes.map { |e| e ^ key_cycle.next }
+
+    return Lib.bin_to_hex(Lib.to_text(encrypted_bytes))
+  end
 end
