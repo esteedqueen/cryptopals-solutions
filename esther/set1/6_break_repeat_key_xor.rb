@@ -1,3 +1,4 @@
+# http://cryptopals.com/sets/1/challenges/6
 require 'base64'
 require './lib'
 require 'test/unit'
