@@ -13,6 +13,11 @@ module Lib
     string.unpack('H*').first
   end
 
+  def hex_to_bin_to_base64(hex_encoded_string)
+    bin = hex_to_bin(hex_encoded_string)
+    bin_to_base64([bin])
+  end
+
   def to_text(bytes)
     bytes.flatten.pack('C*')
   end
