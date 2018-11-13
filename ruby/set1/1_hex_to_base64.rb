@@ -4,7 +4,7 @@
 # Base64 Encoding (RFC 2045) returns this "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hy\nb29t\n"
 # Base64 Encoding (RFC 4648) returns this "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t" which is the expected value
 require 'test/unit'
-require './lib'
+require_relative '../lib'
 
 # convert hex string to bin, then, encode the array of bin value in Base64 Encoding (RFC 4648)
 def hex_to_bin_to_base64(hex_encoded_string)

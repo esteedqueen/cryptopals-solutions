@@ -1,6 +1,6 @@
 # http://cryptopals.com/sets/1/challenges/6
 require 'base64'
-require './lib'
+require_relative '../lib'
 require 'test/unit'
 
 def break_repeat_key_xor(file, keysize_range)
@@ -48,7 +48,7 @@ end
 class TestBreakRepeatKeyXor < Test::Unit::TestCase
   def test_that_it_can_pass
     keysize_range = (2..40)
-    file = './challenge_data/set6.txt'
+    file = Lib.data_directory + '/set6.txt'
 
     # Hamming distance
     stringA = "this is a test"

@@ -7,7 +7,7 @@
 
 # (Your code from #3 should help.)
 
-require './lib'
+require_relative '../lib'
 require 'test/unit'
 
 def detect_single_char_xor(file)
@@ -40,7 +40,7 @@ end
 
 class TestDetectSingleCharXor < Test::Unit::TestCase
   def test_that_it_can_pass
-    input = './challenge_data/set4.txt'
+    input = Lib.data_directory + '/set4.txt'
     expected_output = "Now that the party is jumping\n"
 
     assert_equal(expected_output, detect_single_char_xor(input))

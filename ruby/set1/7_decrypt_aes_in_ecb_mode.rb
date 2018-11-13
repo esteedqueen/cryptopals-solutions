@@ -13,7 +13,7 @@
 
 require 'openssl'
 require 'base64'
-require './lib'
+require_relative '../lib'
 require 'test/unit'
 
 def decrypt_aes_in_ecb_mode(cipher_text_bytes, key)
@@ -32,7 +32,7 @@ end
 
 class TestDecryptAESInECBMode < Test::Unit::TestCase
   def test_that_it_can_pass
-  cipher_text_in_bytes = Base64.decode64(File.read("./challenge_data/set7.txt"))
+  cipher_text_in_bytes = Base64.decode64(File.read(Lib.data_directory + '/set7.txt'))
   key = 'YELLOW SUBMARINE'
   expected_first_line = "I'm back and I'm ringin' the bell "
 

@@ -11,7 +11,7 @@
 # Character frequency is a good metric. Evaluate each output and choose the one with the best score.
 
 require 'test/unit'
-require './lib'
+require_relative '../lib'
 
 # Rational:
 # If a message is encypted by XORing it against a key, if you find the key and

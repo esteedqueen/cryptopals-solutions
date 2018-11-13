@@ -63,4 +63,8 @@ module Lib
 
     return Lib.bin_to_hex(Lib.to_text(encrypted_bytes))
   end
+
+  def data_directory
+    File.join(Dir.pwd, 'data')
+  end
 end
